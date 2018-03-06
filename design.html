@@ -11,9 +11,10 @@ We will be using the Prusa I3 3D Printers located on Campus as our main means of
 We also will be using Cura as a standard Slicing Engine that is compatiable with all 3D printers we plan on using.
 Once we have our GCODE we will write an algorithm that will parse and modify the GCODE to allow for Sinusoidal fill patterns of variable hieght and thickness.
 We will be writing in the tkCNC IDE which allows for modification and verification of G-Code.
-<pre>
+<br>
   Our project flow would use a CAD drawn stl model which is then input into the Cura application. This program will slice the object using Varislice variable layer height.The post gcode sent out will then be run through our script. The psuedo code would be
-<code>
+<pre>
+  <code>
   getG-Code(input)
     read line
     store x,y,z, and extrusion values in table (4-D)
@@ -75,5 +76,5 @@ G1 X120.953 Y93.142 E0.01942
 G1 X121.487 Y95.068 E0.09971
 G1 X121.57 Y95.445 E0.01926
   </pre>
-  
+  The user would not be expected to understand the manipulation done to the code, this would simply be the format needed in order for the machine to understand the instructions and to complete the print. Testing will be important to see the boundries that can be reached when attempting to print with variable height in the same layer.
 </p>
