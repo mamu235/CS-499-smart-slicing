@@ -12,13 +12,13 @@ We also will be using Cura as a standard Slicing Engine that is compatiable with
 Once we have our GCODE we will write an algorithm that will parse and modify the GCODE to allow for Sinusoidal fill patterns of variable hieght and thickness.
 We will be writing in the tkCNC IDE which allows for modification and verification of G-Code.\n
   
-  Our project flow would use a CAD drawn stl model which is then input into the Cura application. This program will slice the object using Varislice variable layer height.The post gcode sent out will then be run through our script. The psuedo code would be
-
-getG-Code(input)\n
-  read line\n
-  store x,y,z, and extrusion values in table (4-D)\n
-  takez value's and vary them in wave form.\n
-  recombine g-code to original format\n
-  output to new file.\n
-  
+  <p2>Our project flow would use a CAD drawn stl model which is then input into the Cura application. This program will slice the object using Varislice variable layer height.The post gcode sent out will then be run through our script. The psuedo code would be
+  </p2>
+<code>getG-Code(input)
+  read line
+  store x,y,z, and extrusion values in table (4-D)
+  takez value's and vary them in wave form.
+  recombine g-code to original format
+  output to new file.
+  </code>
 </p>
