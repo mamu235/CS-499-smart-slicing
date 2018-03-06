@@ -15,12 +15,14 @@ We will be writing in the tkCNC IDE which allows for modification and verificati
 <br>
   Our project flow would use a CAD drawn stl model which is then input into the Cura application. This program will slice the object using Varislice variable layer height.The post gcode sent out will then be run through our script. The psuedo code would be
 <br>
-<code>getG-Code(input)<br>
-  read line<br>
-  store x,y,z, and extrusion values in table (4-D)<br>
-  takes value's and vary them in wave form. (algorithm to be designed)<br>
-  recombine g-code to original format<br>
-  output to new file.<br>
-  </code>
-  <br>
+<br>
+<code>
+  getG-Code(input)<br>
+    read line<br>
+    store x,y,z, and extrusion values in table (4-D)<br>
+    takes value's and vary them in wave form. (algorithm to be designed)<br>
+    recombine g-code to original format<br>
+    output to new file.<br>
+</code>
+<br>
 </p>
