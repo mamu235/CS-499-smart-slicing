@@ -4,6 +4,12 @@ layout: default
 ---
 <h2>Chris's Weekly Log</h2>
 
+<h3>3/18/18</h3>
+<p>
+  The week of 3/5 - 3/9 was the presentation week that involved us finishing up last minute changes to our presentation. This week was mostly a focus for our team on midterms so we didn't accomplish much together outside of completing the presentation. Individually i continued to mess with the cnjs parser found in a repository that would get each line of gcode and store them in an area whih our program would then modify. This program itself runs in JSON so i've been working on understanding the baics of the language and being able to manipulate the source code in a way that allows for easier recombination of the final G-code. That is, this parser can seperate the individual lines but in doing so we currently still have to find a way to recombine the final product in a way that the machine will still recognize it. This is difficult since machine code can be large for larger objects and it can't be manually reconstructed. Going towards the end of the week after midterms i was trying to figure out a way to tackle this issue.
+  The week of 3/10 - 3/18 was spring break and i tried to work on some of the issue found in the previous week but didn't get too much done. The group likely took this time to look at our individual responsibilities and will recombine the following week to get a workable script done within the next 2 weeks.
+</p>
+
 <h3>3/4/18</h3>
 <p> Due to some time conflicts i was unable to attend our group meeting with Dr. Dietz this week but my group members caught me up on the discussion. We will be following a sinusoidal apporach to the printing of 3-D objects and will develop a scrip post slice to manipulate printing. This is likely the simplest approach as we would not have to develop GUI interfaces in CURA to allow slicing to be interpreted in the application. This week we also presented to Presentation U and got relatively good remarks on the delivery of content while still having some room for growth in our delivery. This past week i personally worked on my part of the presentation which was to focus on the technical constraints that our project has due to the hardware involved. When dealing with units in mm, it because important to understand the hardware used and even the material used and how it interacts with each other at differing temperatures. This will be important going forward as we look to see the limitations of sinusoidal printing with out current hardware (Prusca I3). </p>
 
@@ -29,4 +35,3 @@ layout: default
   Looking forward the next step is to bring forward what the group has found and delving into the work done by looking at the source code and understanding how the files are manipulated to present the 3-D printed with machine code (G-code) it understands. 
   The current variable z slicer that needs to be understood is <a href="http://www.instructables.com/id/Variable-Slicing-for-3D-Printing-on-Autodesk-Ember/">Varislice</a>, has the processing script as open source and can vary the z-axis for layers so it can be an extremely helpful tool to be used once the program is understood in a way that allows us to manipulate it for our purpose. 
   This week as per Dr. Dietz instruction was best spent familiarizing ourselves with the 3-D printing world since he was gone for most of it.</p>
-
