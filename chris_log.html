@@ -4,6 +4,12 @@ layout: default
 ---
 <h2>Chris's Weekly Log</h2>
 
+<h3>3/25/18</h3>
+<p>
+  This week we met on Wednesday to progress our code further. Our code now is implemented such that the printer will not attempt to start at the same x/y location each print. This was originally the simplest method to print our desired cube but for the sake of expandabilty of the program for future design we desided to store the locations of the variables and then change them rather than rewrite the G0 command to start at the same spot. This will inevitably introduce some more time cost for the program but it will be offset by the usefullness of the implementation. We tried meeting in the weekend but with the weather and 2 of us getting really sick we could not. This next week we will meet as much as possible to finish up our code and start testing our design on the actual printers.
+</p>
+
+
 <h3>3/18/18</h3>
 <p>
   The week of 3/5 - 3/9 was the presentation week that involved us finishing up last minute changes to our presentation. This week was mostly a focus for our team on midterms so we didn't accomplish much together outside of completing the presentation. Individually i continued to mess with the cnjs parser found in a repository that would get each line of gcode and store them in an area whih our program would then modify. This program itself runs in JSON so i've been working on understanding the baics of the language and being able to manipulate the source code in a way that allows for easier recombination of the final G-code. That is, this parser can seperate the individual lines but in doing so we currently still have to find a way to recombine the final product in a way that the machine will still recognize it. This is difficult since machine code can be large for larger objects and it can't be manually reconstructed. Going towards the end of the week after midterms i was trying to figure out a way to tackle this issue.
