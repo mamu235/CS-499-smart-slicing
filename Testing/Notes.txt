@@ -1,0 +1,15 @@
+Notes from Testing Review on 4/2/2018
+
+correct format of gcode and correctly defined
+max and min need an asterisk to show it is in code. Comment at location
+writing to file clear, revisit at end of semester if done or not working out.
+system testing specify python version
+	note levels of tools and languages used
+try to get some feedback before the end of the semester
+	look at his office hours
+
+Test results
+	who did the test and when
+	be honest about results
+
+Table format for system+ no needed but say when it was done and by who.
