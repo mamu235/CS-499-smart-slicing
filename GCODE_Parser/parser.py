@@ -48,6 +48,24 @@ def layerID(data, lower):
   if upper == max(data)+1:
     print("The upper layer cannot be manipulated as it is a protected layer")
 
+# Function: extrusionID() - This function will find the Indicies of the Extrusion value
+#   Parameters: data - which is where all of the GCODE is stored, line - the line to ID indicies
+def extrusionID(data, line):
+  count = 0
+  while count == 0:
+    if data[line][i] == ' ':
+      if data[line][i+1] == 'E':
+        if data[line][i+2] == ':':
+          count = i+3
+        else:
+          count = 0
+      else:
+        count = 0
+    else:
+      count = 0
+
+  return count
+
 # Main Fucntion
 def main():
   # Getting the File Path
