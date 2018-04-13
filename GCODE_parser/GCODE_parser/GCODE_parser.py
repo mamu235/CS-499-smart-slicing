@@ -7,6 +7,8 @@
 
 import array
 
+URL = r'C:\Users\Mitch\source\repos\CS-499-smart-slicing\GCODE_parser\24x24x24cube_comments.gcode'
+
 # Function: readIn() - This function reads in the data of a GCODE file
 def readIn(URL):
   # Reading In the GCODE file by line
@@ -40,13 +42,19 @@ def maxLayer(data):
 #   Parameters: data - which is where all of the GCODE is stored, lower - the lower layer to ID indicies
 def layerID(data, lower):
   # Checking to guard against protected layer manipulation
-  if lower == 0:
-    print("The Lower layer cannot be 0, as it is a protected Layer")
+  if lower < 2:
+    print("The Lower layer cannot be 0 or 1, as they are protected Layers!")
     return -1
   # Checking to guard against protected upper layer maniuplation
-  upper = lower + 2
-  if upper == max(data)+1:
-    print("The upper layer cannot be manipulated as it is a protected layer")
+  keywrd = '; move to next layer ('
+  counter = 0
+  for i in range(0,len(data)):
+    for j in range(0, len(data[i])):
+      if data[i][j:j+22] == keywrd:
+        layer = str(counter)
+        print(layer)
+        counter += 1
+  return
 
 # Function: extrusionID() - This function will find the Indicies of the Extrusion value
 #   Parameters: data - which is where all of the GCODE is stored, line - the line to ID indicies
@@ -66,16 +74,22 @@ def extrusionID(data, line):
 
   return count
 
+def layerFlip():
+
+  return
+
 # Main Fucntion
 def main():
   # Getting the File Path
-  print("Please enter the URL path of the GCODE file you wish to adjust")
-  URL = input(" : ")
+  print("Starting Processing of file: ")
+  print(URL)
+  print()
   # Variable for GCODE contents
   data = []
   data = readIn(URL)
 
-
+  layerID(data, 2)
   
 
 main()
+
