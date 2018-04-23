@@ -15,7 +15,7 @@ Non-Planar printing is the idea that the object can be printed with layers that 
 ---------------------------------------------------
         	  Gcode Parser
 ---------------------------------------------------
-Using python version _._, we created a script that will open, read, and modify a pre-sliced object. The first version of this script was designed specifically for introducing sinusoidal waves into a small cube that has a full fill pattern. Upon confirming the script fulfills the desired outcomes (listed below), the parser will need to be modified to accommodate other types of objects. 
+Using python version 3.2, we created a script that will open, read, and modify a pre-sliced object. The first version of this script was designed specifically for introducing sinusoidal waves into a small cube that has a full fill pattern. Upon confirming the script fulfills the desired outcomes (listed below), the parser will need to be modified to accommodate other types of objects. 
 
 
 ---------------------------------------------------
