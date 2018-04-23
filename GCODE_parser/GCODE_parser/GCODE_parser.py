@@ -85,6 +85,14 @@ def layerFlip(data, run_length):
   flagwrd4 = 'next'
   flagwrd5 = 'layer'
   flagwrd6 = '(1)\n'
+  # Flags for 2nd Layer
+    # Flag to indicate that we have captured  the infill paths of the first layer
+  flag1 = ';'
+  flag2 = 'move'
+  flag3 = 'to'
+  flag4 = 'next'
+  flag5 = 'layer'
+  flag6 = '(2)\n'
   # Passing through all lines
   for i in range(0,len(data)):
     # Checking if the last 2 tokens match those of the infill layers
@@ -94,6 +102,9 @@ def layerFlip(data, run_length):
         returnLayer.append([data[i][1], data[i][2]])
     if data[i][-1] == flagwrd6:
       if data[i][-2] == flagwrd5 and data[i][-3] == flagwrd4 and data[i][-4] == flagwrd3 and data[i][-5] == flagwrd2 and data[i][-6] == flagwrd1:
+        returnLayer = []
+    if data[i][-1] == flag6:
+      if data[i][-2] == flag5 and data[i][-3] == flag4 and data[i][-4] == flag3 and data[i][-5] == flag2 and data[i][-6] == flag1:
         return returnLayer, i
 
   return -1
