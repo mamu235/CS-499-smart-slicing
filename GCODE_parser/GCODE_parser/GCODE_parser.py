@@ -134,6 +134,16 @@ def layerReplace(data, replacements, pos):
 
   return data
 
+def extrude(Amp, x):
+  extAvg = 0.02
+	maxLayer = 22/2
+	val = 0
+	val = Amp/maxLayer
+	val = val * extAvg
+	val = val * sin((2*pi/20)* x)
+	
+	return val
+	
 # Main Fucntion
 def main():
   # Getting the File Path
