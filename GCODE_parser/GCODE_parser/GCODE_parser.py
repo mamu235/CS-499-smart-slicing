@@ -143,6 +143,26 @@ def extrude(Amp, x):
 	val = val * sin((2*pi/20)* x)
 	
 	return val
+def injectCommand(data, pos):
+	targetAmp = 5
+	Amp = 0
+	avgExt = .02
+	flag1 = ';'
+  flag2 = 'move'
+  flag3 = 'to'
+  flag4 = 'next'
+  flag5 = 'layer'
+  flag6 = '(2)\n'
+  # Passing through all lines
+	for i in range(pos,len(data):
+		if data[i][-2] == flag5 and data[i][-3] == flag4 and data[i][-4] == flag3 and data[i][-5] == flag2 and data[i][-6] == flag1:
+			Amp += targetAmp/11
+			 count = 0
+			for j in range(pos,len(data):
+				data.pop(j)
+				data.insert(extrude(Amp, pos))
+				count += 1
+
 	
 # Main Fucntion
 def main():
