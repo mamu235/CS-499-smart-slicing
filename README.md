@@ -4,6 +4,4 @@ The parser is within the GCODE_Parser directory. There is a README-Parser.txt th
 
 There are requirements that needed to run the parser are listed in the Requirements HTML file. 
 
-The Testing Directory holds the results of our testing. It explians test cases and the outcomes. 
-
 All other direcrtoies are for the website. Each member's log is held in the [memberName]_log.html. 
