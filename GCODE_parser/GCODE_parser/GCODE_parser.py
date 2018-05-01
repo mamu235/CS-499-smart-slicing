@@ -10,6 +10,9 @@
 
 import array
 import numpy
+import math
+from math import sin
+from math import pi
 
 URL = r'C:\Users\Mitch\source\repos\CS-499-smart-slicing\GCODE_parser\24x24x24cube_comments.gcode'
 writeURL = r'C:\Users\Mitch\source\repos\CS-499-smart-slicing\GCODE_parser\24x24x24cube_comments_modified.gcode'
@@ -136,34 +139,80 @@ def layerReplace(data, replacements, pos):
 
 def extrude(Amp, x):
   extAvg = 0.02
-	maxLayer = 22/2
-	val = 0
-	val = Amp/maxLayer
-	val = val * extAvg
-	val = val * sin((2*pi/20)* x)
-	
-	return val
+  maxLayer = 22/2
+  val = 0
+  val = Amp/maxLayer
+  val = val * extAvg
+  val = val * sin((2*pi/20)* x)
+
+  return val
+#def zpos(data, cur):
+
+#  keywrd1 = ';'
+#  keywrd2 = 'infill\n'
+  
+#  if data[cur][cur-1] == keywrd2:
+#    if data[cur][cur-2] == keywrd1:
+#      prevE = float(data[cur-1][3])      # pervious line extrude value
+#      curE = float(data[cur][3])
+#      if curE > prevE:
+#        #raise
+
+#      elif curE < pervE:
+#        #lower
+#      else: 
+#        #stay the same
+#  return
+
 def injectCommand(data, pos):
-	targetAmp = 5
-	Amp = 0
-	avgExt = .02
-	flag1 = ';'
+  targetAmp = 5
+  Amp = 0
+  avgExt = 0.02
+  keywrd1 = ';'
+  keywrd2 = 'infill\n'
+  flag1 = ';'
   flag2 = 'move'
   flag3 = 'to'
   flag4 = 'next'
   flag5 = 'layer'
-  flag6 = '(2)\n'
   # Passing through all lines
-	for i in range(pos,len(data):
-		if data[i][-2] == flag5 and data[i][-3] == flag4 and data[i][-4] == flag3 and data[i][-5] == flag2 and data[i][-6] == flag1:
-			Amp += targetAmp/11
-			 count = 0
-			for j in range(pos,len(data):
-				data.pop(j)
-				data.insert(extrude(Amp, pos))
-				count += 1
+  for i in range(pos,len(data)):
+    # checking conditional statement
+    startZ = 0
+    if data[i][-2] == flag5 and data[i][-3] == flag4 and data[i][-4] == flag3 and data[i][-5] == flag2 and data[i][-6] == flag1:
+      Amp += targetAmp / 11
+      # Getting the initial z value for the layer
+      startZ = data[i][1][1:-1]
+    # All infill statements after conditionals
+    elif data[i][-1] == keywrd2 and data[i][-2] == keywrd1:
+      # Getting all original data from line
+      gCom = data[i][0]
+      xDist = data[i][1]
+      xDist = xDist.replace("X", "")
+      xDist = float(xDist)
+      yVal = data[i][2]
+      inFill1 = data[i][4]
+      inFill2 = data[i][5]
+      # Popping off the line
+      data.pop(i)
+      # Accumulator
+      count = i
+      xIncrement = xDist/20
+      xStart = xDist-20
+      zCopy = float(startZ)
+      zIncrement = (zCopy + Amp)/5
+      for j in range(0,19): 
+        # ROBERT -  Add the +5 steps for z change then -5 then -5, then +5
+        extVal = extrude(Amp, j)
+        zCopy += zIncrement
+        data.insert(i, [gCom, 'X'+str(xStart), yVal, 'E'+str(extVal), inFill1, inFill2])
+        data.insert(i+1, ['G1', 'Z'+str(zCopy), 'F7800.000', ';', 'Z', 'height', 'change\n'])
+        count += 2
+        xStart += xIncrement
+      i = count
 
-	
+  return data
+
 # Main Fucntion
 def main():
   # Getting the File Path
@@ -183,6 +232,7 @@ def main():
 
   print("Replacing Values:")
   data = layerReplace(data, val_array, startRepPos)
+  data = injectCommand(data, startRepPos)
   print()
 
   print("Values Replaced. Writing to file: ")
