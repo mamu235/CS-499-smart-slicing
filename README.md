@@ -1,25 +1,7 @@
-# CS-499-smart-slicing README
+This README is designed to explain the reposotory. 
 
-## Adding New Posts
+The parser is within the GCODE_Parser directory. There is a README-Parser.txt that will explain the project and how to use the parser.
 
-In order to add a new post to report what you've done this week, go to the 
-```_posts```
-Directory and in the upper left select 
-```Make New File```
+There are requirements that needed to run the parser are listed in the Requirements HTML file. 
 
-##You need to name this file very precisely!
-
-the post name needs to be named according to the following scheme:
-```YYYY-MM-DD-title-of-my-post.md```
-
-Then follow this Template:
-```
----
-layout: post
-title: "YOUR NAME - TITLE OF POST"
-date: YYYY-MM-DD
----
-
-<CONTENT CONTENT CONTENT>```
-
-Make sure to put your name in the Title of the Post!!!
+All other direcrtoies are for the website. Each member's log is held in the [memberName]_log.html. 

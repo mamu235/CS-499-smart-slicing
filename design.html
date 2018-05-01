@@ -5,6 +5,8 @@ title: Project Design
 
 <h2>Project Design</h2>
 
+<p>This was created using Python. It is assumed that you have the package installed on your machine.</p>
+
 <p>Our Project Design involves varying the Layer height of the fill according to a sinusoidal pattern. 
 We can accomplish this by varying the Z layer value, or height value, of the print head while printing, as well as varying the amount of material extruded during that pass.
 We will be using the Prusa I3 3D Printers located on Campus as our main means of fabrication. 
@@ -18,7 +20,8 @@ We will be working in the tkCNC IDE which allows for modification and verificati
   getG-Code(input)
     read line
     store x,y,z, and extrusion values in table (4-D)
-    take each line z value and vary them in wave form. (algorithm to be designed)
+    take each line z value and vary them in wave form.
+      based on x position, extrude more or less, and change z variable more or less, in tandem
     recombine g-code to original format
     output to new file.
 </code>
