@@ -24,4 +24,13 @@ Using python version 3.2, we created a script that will open, read, and modify a
 The overall object of this parser is to implement Non-Planar printing. However, certain group-imposed restrictions created specific objectives. 
 
 * To create a small cube were, layer by layer, sinusoidal waves were introduced into the layers, building up the amplitude to its peak in the center of the cube, and then to slowly dampen the waves out, to create a flat cube. 
-* In theory these waves will strengthen the strength of the object, and will lay the framework for create objects with printed cubes. This objective will be tested once the parser has been completed. 
+* In theory these waves will strengthen the strength of the object, and will lay the framework for create objects with printed cubes. This objective will be tested once the parser has been completed.
+
+ 
+---------------------------------------------------
+        		Use
+---------------------------------------------------
+
+The script needs to be ran on a host with Python 3.2 installed. The script can be placed anywhere on the host, as it is not dependent on any system files. 
+
+Once the script is ran, the user will be prompted to enter in the location of the G-Code being modified. The script will place a new file in this same location.
