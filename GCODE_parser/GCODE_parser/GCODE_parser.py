@@ -201,14 +201,20 @@ def injectCommand(data, pos):
       xStart = xDist-20
       zCopy = float(startZ)
       zIncrement = (zCopy + Amp)/5
+      sign = 1				#default z change is positive
+      zCounter = 0			#counter for z change
       for j in range(0,19): 
-        # ROBERT -  Add the +5 steps for z change then -5 then -5, then +5
-        extVal = extrude(Amp, j)
+        
+        if ((zCounter % 5) = 0):	#every 5 Z changes will change the sign of the change. First 5 is positive. Next five is negitive. So on.
+	  sign = sign * -1		#sign conversion
+	
+	extVal = extrude(Amp, j)
         zCopy += zIncrement
         data.insert(i, [gCom, 'X'+str(xStart), yVal, 'E'+str(extVal), inFill1, inFill2])
         data.insert(i+1, ['G1', 'Z'+str(zCopy), 'F7800.000', ';', 'Z', 'height', 'change\n'])
         count += 2
         xStart += xIncrement
+        zCounter += 1
       i = count
 
   return data
