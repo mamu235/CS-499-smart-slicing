@@ -14,9 +14,6 @@ import math
 from math import sin
 from math import pi
 
-URL = r'C:\Users\Mitch\source\repos\CS-499-smart-slicing\GCODE_parser\24x24x24cube_comments.gcode'
-writeURL = r'C:\Users\Mitch\source\repos\CS-499-smart-slicing\GCODE_parser\24x24x24cube_comments_modified.gcode'
-
 # Function: readIn() - This function reads in the data of a GCODE file
 #   Parameters: URL of Data File
 
@@ -221,10 +218,15 @@ def injectCommand(data, pos):
 
 # Main Fucntion
 def main():
+
+  URL = input("Please put the file path of the GCODE file you wish to parse: ")
+  print()
+  writeURL = input("Please put the file path of the GCODE File you wish to write to: ")
+  print()
   # Getting the File Path
   print("Starting Processing of file: ")
   print()
-  print(URL)
+  URL = input("Please enter the entire file path")
   print()
   # Variable for GCODE contents
   data = []
