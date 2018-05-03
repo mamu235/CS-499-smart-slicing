@@ -213,7 +213,7 @@ def injectCommand(data, pos):
         data.insert(i, [gCom, 'X'+str(xStart), yVal, 'E'+str(extVal), inFill1, inFill2])
         data.insert(i+1, ['G1', 'Z'+str(zCopy), 'F7800.000', ';', 'Z', 'height', 'change\n'])
         count += 2
-        xStart += xIncrement
+        xStart += (xIncrement*sign)
         zCounter += 1
       i = count
 
