@@ -1,0 +1,349 @@
+---
+layout: default
+title: Testing
+---
+<p>&nbsp;</p>
+<p>Unit Testing</p>
+<p>&nbsp;</p>
+<table style="border-color: black;">
+<tbody>
+<tr style="height: 35px;">
+<td style="height: 35px;" colspan="4" width="623">
+<p>Parsing</p>
+</td>
+</tr>
+<tr style="height: 35px;">
+<td style="height: 35px;" width="156">
+<p>Test</p>
+</td>
+<td style="height: 35px;" width="156">
+<p>Expected Result</p>
+</td>
+<td style="height: 35px;" width="156">
+<p>Actual Result</p>
+</td>
+<td style="height: 35px;" width="156">
+<p>Solution/Reason</p>
+</td>
+</tr>
+<tr style="height: 35px;">
+<td style="height: 35px;" width="156">
+<p>No input layers</p>
+</td>
+<td style="height: 35px;" width="156">
+<p>Shouldn&rsquo;t do anything</p>
+</td>
+<td style="height: 35px;" width="156">
+<p>Nothing changed</p>
+</td>
+<td style="height: 35px;" width="156">
+<p>No lines to change</p>
+</td>
+</tr>
+<tr style="height: 35px;">
+<td style="height: 35px;" width="156">
+<p>Single Layer</p>
+</td>
+<td style="height: 35px;" width="156">
+<p>Should parse</p>
+</td>
+<td style="height: 35px;" width="156">
+<p>Parsed</p>
+</td>
+<td style="height: 35px;" width="156">
+<p>First line not changed</p>
+</td>
+</tr>
+<tr style="height: 48px;">
+<td style="height: 48px;" width="156">
+<p>Incorrect format Layer</p>
+</td>
+<td style="height: 48px;" width="156">
+<p>Should not that and tell user, exit.</p>
+</td>
+<td style="height: 48px;" width="156">
+<p>*Not Tested</p>
+</td>
+<td style="height: 48px;" width="156">
+<p>Not part of standardized format</p>
+</td>
+</tr>
+<tr style="height: 48px;">
+<td style="height: 48px;" width="156">
+<p>Different Slicer</p>
+</td>
+<td style="height: 48px;" width="156">
+<p>Should note that and tell user what to use, exit.</p>
+</td>
+<td style="height: 48px;" width="156">
+<p>*Not Tested</p>
+</td>
+<td style="height: 48px;" width="156">
+<p>Not part of the standardized format</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<table style="border-color: black;">
+<tbody>
+<tr>
+<td colspan="4" width="623">
+<p>Z height</p>
+</td>
+</tr>
+<tr>
+<td width="156">
+<p>Test</p>
+</td>
+<td width="156">
+<p>Expected Result</p>
+</td>
+<td width="156">
+<p>Actual Result</p>
+</td>
+<td width="156">
+<p>Solution/Reason</p>
+</td>
+</tr>
+<tr>
+<td width="156">
+<p>No input layers</p>
+</td>
+<td width="156">
+<p>No change should be done</p>
+</td>
+<td width="156">
+<p>Nothing Changed</p>
+</td>
+<td width="156">
+<p>No lines to change</p>
+</td>
+</tr>
+<tr>
+<td width="156">
+<p>Single Layer</p>
+</td>
+<td width="156">
+<p>No change should be done</p>
+</td>
+<td width="156">
+<p>Nothing changed</p>
+</td>
+<td width="156">
+<p>First line doesn&rsquo;t change</p>
+</td>
+</tr>
+<tr>
+<td width="156">
+<p>Missing coordinate(format not correct or parser problem/failed to pick it up)</p>
+</td>
+<td width="156">
+<p>Recognize missing x,y or/and e/z. Should exit</p>
+</td>
+<td width="156">
+<p>*Not tested</p>
+</td>
+<td width="156">
+<p>Not part of standardized format</p>
+</td>
+</tr>
+<tr>
+<td width="156">
+<p>Space in layer(movement with no extrusion)</p>
+</td>
+<td width="156">
+<p>Do nothing</p>
+</td>
+<td width="156">
+<p>*Not tested</p>
+</td>
+<td width="156">
+<p>Not part of standardized format</p>
+</td>
+</tr>
+<tr>
+<td width="156">
+<p>Max vertical change</p>
+</td>
+<td width="156">
+<p>Should work up to a maximum defined Z layer change</p>
+</td>
+<td width="156">
+<p>Correctly moves to the max</p>
+</td>
+<td width="156">
+<p>We set a defined max height for the z to change</p>
+</td>
+</tr>
+<tr>
+<td width="156">
+<p>Min vertical change</p>
+</td>
+<td width="156">
+<p>Should work for a predefined minimum change of height</p>
+</td>
+<td width="156">
+<p>Correctly moves to the min</p>
+</td>
+<td width="156">
+<p>We set a standard step to move and it does it correctly</p>
+</td>
+</tr>
+<tr>
+<td width="156">
+<p>Max width of X for printer</p>
+</td>
+<td width="156">
+<p>Should be able to vary Z at a max width so that only 1 sinusoid is made across this layer</p>
+</td>
+<td width="156">
+<p>*Not Tested</p>
+</td>
+<td width="156">
+<p>Not part of standardized format</p>
+</td>
+</tr>
+<tr>
+<td width="156">
+<p>XY movement at the same point</p>
+</td>
+<td width="156">
+<p>Should note that this is not a capability of the program, tell user, and exit.</p>
+</td>
+<td width="156">
+<p>*Not Tested</p>
+</td>
+<td width="156">
+<p>Restricted to only XZ at once.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<table style="width: 648px; border-color: black;">
+<tbody>
+<tr>
+<td style="width: 624px;" colspan="4">
+<p>Writing To file</p>
+</td>
+</tr>
+<tr>
+<td style="width: 156px;">
+<p>Test</p>
+</td>
+<td style="width: 156px;">
+<p>Expected Result</p>
+</td>
+<td style="width: 156px;">
+<p>Actual Result</p>
+</td>
+<td style="width: 156px;">
+<p>Solution/Reason</p>
+</td>
+</tr>
+<tr>
+<td style="width: 156px;">
+<p>No input layers</p>
+</td>
+<td style="width: 156px;">
+<p>Shouldn&rsquo;t write anything</p>
+</td>
+<td style="width: 156px;">
+<p>Not tested</p>
+</td>
+<td style="width: 156px;">
+<p>It shouldn&rsquo;t do anything since there is no layer to read</p>
+</td>
+</tr>
+<tr>
+<td style="width: 156px;">
+<p>Single Layer</p>
+</td>
+<td style="width: 156px;">
+<p>Shouldn&rsquo;t write anything</p>
+</td>
+<td style="width: 156px;">
+<p>Writes a same thing to the file</p>
+</td>
+<td style="width: 156px;">
+<p>First layer is not changed</p>
+</td>
+</tr>
+<tr>
+<td style="width: 156px;">
+<p>Incorrect format Layer</p>
+</td>
+<td style="width: 156px;">
+<p>Should not get those, if it does then it should close the program and report the error</p>
+</td>
+<td style="width: 156px;">
+<p>None found</p>
+</td>
+<td style="width: 156px;">
+<p>It correctly injected changes</p>
+</td>
+</tr>
+<tr>
+<td style="width: 156px;">
+<p>Writing a new layer</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</td>
+<td style="width: 156px;">
+<p>Should write to the file the correct way such that if layers are made then the layer count Is changed and the new layer is insert appropriately. Current file data is moved lower and not replaced</p>
+</td>
+<td style="width: 156px;">
+<p>Inserted a new layer by inserting Z layers. Worked</p>
+</td>
+<td style="width: 156px;">
+<p>We made a new file instead of changing the original</p>
+</td>
+</tr>
+<tr>
+<td style="width: 156px;">
+<p>Changing Z value for layer</p>
+</td>
+<td style="width: 156px;">
+<p>Should make the file correct for the X/Y of a given Z value change</p>
+</td>
+<td style="width: 156px;">
+<p>Z changed and layer injected in between commands</p>
+</td>
+<td style="width: 156px;">
+<p>Was important to make new z commands even though we come back to the same height at the end of the x line.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>Integration Testing</p>
+<ul>
+<li>Parser sends array to Z manipulator&nbsp;&rarr; success</li>
+<li>send it to write to the file&nbsp;&rarr; success</li>
+<li>Write file succeeds &rarr; success</li>
+</ul>
+<p>&nbsp;</p>
+<p>System Testing (Python 3.4, tests conducted as a group)</p>
+<ul>
+<li>Input a simple cube design &rarr; Basis of our design</li>
+<li>Change the dimensions of the cube design</li>
+<li>Add design to the cube</li>
+<li>Test for a code not sliced in Slic3r</li>
+<li>Test for a file that is not gcode</li>
+<li>Test the program across machines to see time constraints &rarr; Not significant time to run</li>
+<li>See that the output file is made and correct &rarr; Correct file</li>
+</ul>
+<p>&nbsp;</p>
+<p>Customer Testing (Customer unavailable during team availability)</p>
+<ul>
+<li>Note the design of the print &rarr; Different from standard</li>
+<li>See how accurate the print is to the CAD design</li>
+<li>Note the layer printing cleanliness</li>
+<li>Is the print any stronger than normal printing</li>
+<li>Does the print take more time than normal printing &rarr; Yes, full fill takes longer</li>
+<li>Does the customer believe in the expandability of the design</li>
+</ul>
